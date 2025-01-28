@@ -10,8 +10,8 @@ const Footer = () => {
             <p> Copyright &copy 2024 Created by Anthony </p>
             <section className="footer-nav">
                 <Link to="/">Home</Link>
-                <Link to="/browse">Browse</Link>
-                <Link to="/contact">Contact</Link>
+                <Link to="/Products">Products</Link>
+                <Link to="/Contact">Contact</Link>
             </section>
             <section className="social-media-links">
                 <a href="https://www.instagram.com/anth.ony__/" className="fa fa-instagram"> <FontAwesomeIcon icon={faInstagram} /> </a>
