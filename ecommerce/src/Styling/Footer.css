@@ -1,10 +1,8 @@
-footer {
+.footer-container {
     position: relative;
     width: 100%;
     bottom: 0;
     padding: 1rem 0;
-}
-.footer-container { 
     text-align: center;
     color: white;
     font-size: 1.125rem;

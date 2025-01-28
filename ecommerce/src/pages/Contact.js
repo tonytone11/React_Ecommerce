@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../styling/Contact.css';
-import NavBar from '../components/NavBar';
 import Header from '../components/Header';
+import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -49,8 +50,8 @@ const Contact = () => {
         <>
             <Header />
             <NavBar />
-            <main>
-                <h1>Contact Us</h1>
+            <main className="contact-container">
+                <h1 className='contact-header1'>Contact Us</h1>
                 <form id="contact" onSubmit={handleSubmit}>
                     <label htmlFor="name">Name:</label>
                     <input
@@ -60,7 +61,6 @@ const Contact = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        required
                     />
                     {errors.name && <p className="error">{errors.name}</p>}
 
@@ -72,7 +72,6 @@ const Contact = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        required
                     />
                     {errors.email && <p className="error">{errors.email}</p>}
 
@@ -82,7 +81,6 @@ const Contact = () => {
                         name="department"
                         value={formData.department}
                         onChange={handleChange}
-                        required
                     >
                         <option value="" disabled>Select the Department</option>
                         <option value="console">Consoles</option>
@@ -105,7 +103,6 @@ const Contact = () => {
             </main>
             <Footer />
         </>
-
     );
 };
 
