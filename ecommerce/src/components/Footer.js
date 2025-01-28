@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faLinkedin, faYahoo } from '@fortawesome/free-brands-svg-icons'
 import '../styling/Footer.css';
 
 
@@ -12,9 +14,9 @@ const Footer = () => {
                 <a href="/Contact Files/contact.html">Contact</a>
             </section>
             <section className="social-media-links">
-                <a href="https://www.instagram.com/anth.ony__/" className="fa fa-instagram" target="_blank" rel="noopener noreferrer"></a>
-                <a href="https://www.linkedin.com/in/anthony-montesdeoca-7b4b6532b/" className="fa fa-linkedin" target="_blank" rel="noopener noreferrer"></a>
-                <a href="mailto:anthony_chen97@yahoo.com" className="fa fa-yahoo"></a>
+                <a href="https://www.instagram.com/anth.ony__/" className="fa fa-instagram" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
+                <a href="https://www.linkedin.com/in/anthony-montesdeoca-7b4b6532b/" className="fa fa-linkedin" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} /></a>
+                <a href="mailto:anthony_chen97@yahoo.com" className="fa fa-yahoo"><FontAwesomeIcon icon={faYahoo} /></a>
             </section>
         </footer>
     );
