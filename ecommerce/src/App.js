@@ -1,22 +1,27 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import Contact from './pages/Contact';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
 import './App.css';
 
 const App = () => {
   return (
-    <div>
+    <Router>
       <Header />
       <NavBar />
-      {/* Main content of your application can go here */}
       <main>
-        <Home />
-        {/* Add more content or components here */}
+        <Routes>
+          <Route exact path="/" component={Home} />
+          <Route path="/products" component={Products} />
+          <Route path="/contact" component={Contact} />
+        </Routes>
       </main>
       <Footer />
-    </div>
+    </Router>
   );
 };
 
