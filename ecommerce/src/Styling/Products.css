@@ -50,3 +50,57 @@ label {
 .item-container img {
     height: 15rem;
 }
+
+/* Responsivity Code */
+
+/* I had to start with tablet to make it work */
+@media (max-width: 768px) {
+    .title-container {
+        width: fit-content;
+    }
+
+    #products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item-container img {
+        height: 8rem;
+    }
+}
+
+/* Then mobile screens */
+@media (max-width: 488px) {
+    .title-container {
+        width: fit-content;
+    }
+
+    #products {
+        grid-template-columns: 1fr;
+    }
+
+    .item-container img {
+        height: 6rem;
+    }
+}
+
+/* A section between tablet and laptop screens */
+@media (min-width: 769px) and (max-width: 1023px) {
+    #products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item-container img {
+        height: 8rem;
+    }
+}
+
+/* Running to issues with my background and this seemed to fix it */
+@media (min-width: 1024px) {
+    #products {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .item-container img {
+        height: 8rem;
+    }
+}

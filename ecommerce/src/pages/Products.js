@@ -5,66 +5,76 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 
 const Products = () => {
+    // Initialize state for storing all products from API
     const [products, setProducts] = useState([]);
+    // Initialize state for storing filtered/sorted products to display
     const [filteredProducts, setFilteredProducts] = useState([]);
+    // Initialize state for current category filter selection
     const [selectedCategory, setSelectedCategory] = useState('all');
+    // Initialize state for current sort method
     const [sortBy, setSortBy] = useState('default');
 
+    // Effect hook to fetch products when component mounts
     useEffect(() => {
         async function fetchProducts() {
+            // Fetch products from API endpoint
             const response = await fetch('/api/products');
+            // Convert response to JSON
             const data = await response.json();
+            // Update both products and filtered products state
             setProducts(data);
             setFilteredProducts(data);
         }
 
         fetchProducts();
-    }, []);
+    }, []); // Empty dependency array means this runs once on mount
 
-    // Filter and sort products
+    // Effect hook to handle filtering and sorting when dependencies change
     useEffect(() => {
+        // Create copy of products array to avoid mutating original
         let result = [...products];
 
-        // Apply category filter
+        // Filter products by selected category if not 'all'
         if (selectedCategory !== 'all') {
             result = result.filter(item => item.category === selectedCategory);
         }
 
-        // Apply sorting
+        // Apply different sorting methods based on sortBy value
         switch (sortBy) {
             case 'price-low':
-                result.sort((a, b) => a.price - b.price);
+                result.sort((a, b) => a.price - b.price); // Sort by price ascending
                 break;
             case 'price-high':
-                result.sort((a, b) => b.price - a.price);
+                result.sort((a, b) => b.price - a.price); // Sort by price descending
                 break;
             case 'name-asc':
-                result.sort((a, b) => a.name.localeCompare(b.name));
+                result.sort((a, b) => a.name.localeCompare(b.name)); // Sort by name A-Z
                 break;
             case 'name-desc':
-                result.sort((a, b) => b.name.localeCompare(a.name));
+                result.sort((a, b) => b.name.localeCompare(a.name)); // Sort by name Z-A
                 break;
             default:
-                break;
+                break; // No sorting for default case
         }
 
+        // Update filtered products with new sorted/filtered array
         setFilteredProducts(result);
-    }, [products, selectedCategory, sortBy]);
+    }, [products, selectedCategory, sortBy]); // Re-run when these dependencies change
 
-    // Get unique categories from products
+    // Create array of unique categories from products
     const categories = ['all'];
     products.forEach(product => {
+        // Add category to array if it exists and isn't already included
         if (product.category && !categories.includes(product.category)) {
             categories.push(product.category);
         }
     });
 
-    // Helper function to capitalize first letter
+    // Utility function to capitalize first letter of string
     const capitalizeFirstLetter = (string) => {
-        if (!string) return '';
+        if (!string) return ''; // Return empty string if input is null/undefined
         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     };
-
     return (
         <>
             <Header />

@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 
 
 const Contact = () => {
+    // Initialize form data state with empty values for all fields
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -13,36 +14,53 @@ const Contact = () => {
         comments: ''
     });
 
+    // Initialize state for storing validation errors
     const [errors, setErrors] = useState({});
 
+    // Handler function for form input changes
     const handleChange = (e) => {
+        // Destructure name and value from the event target (input element)
         const { name, value } = e.target;
+        // Update form data state, spreading existing data and updating the changed field
         setFormData({
             ...formData,
             [name]: value
         });
     };
 
+    // Form validation function
     const validate = () => {
         let formErrors = {};
+        // Check if name is empty
         if (!formData.name) formErrors.name = 'Name is required';
+
+        // Check if email is empty and valid format
         if (!formData.email) {
             formErrors.email = 'Email is required';
         } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            // Test email against regex pattern for basic email validation
             formErrors.email = 'Email address is invalid';
         }
+
+        // Check if department is empty
         if (!formData.department) formErrors.department = 'Department is required';
+
         return formErrors;
     };
 
+    // Form submission handler
     const handleSubmit = (e) => {
+        // Prevent default form submission behavior
         e.preventDefault();
+        // Validate form and get any errors
         const formErrors = validate();
+        // Check if there are any validation errors
         if (Object.keys(formErrors).length === 0) {
-            // Form is valid, submit the form
+            // If no errors, log form data (placeholder for actual submission)
             console.log('Form submitted:', formData);
-            // You can add your form submission logic here
+            // Note: Real form submission logic would go here
         } else {
+            // If there are errors, update errors state
             setErrors(formErrors);
         }
     };
