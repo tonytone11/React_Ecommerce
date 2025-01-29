@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.9eecfe96.css",
+    "main.css": "/static/css/main.a00d67c9.css",
     "main.js": "/static/js/main.0269d549.js",
     "static/js/488.6efa3360.chunk.js": "/static/js/488.6efa3360.chunk.js",
     "static/media/switchController.png": "/static/media/switchController.5f401dc9cf6591e7fb26.png",
@@ -8,12 +8,12 @@
     "static/media/ps5Controller.png": "/static/media/ps5Controller.8768230a4e551b0c208b.png",
     "static/media/hero-image.png": "/static/media/hero-image.95736cc1b7ca9c99bc1f.png",
     "index.html": "/index.html",
-    "main.9eecfe96.css.map": "/static/css/main.9eecfe96.css.map",
+    "main.a00d67c9.css.map": "/static/css/main.a00d67c9.css.map",
     "main.0269d549.js.map": "/static/js/main.0269d549.js.map",
     "488.6efa3360.chunk.js.map": "/static/js/488.6efa3360.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9eecfe96.css",
+    "static/css/main.a00d67c9.css",
     "static/js/main.0269d549.js"
   ]
 }
