@@ -52,7 +52,18 @@ const Products = () => {
     }, [products, selectedCategory, sortBy]);
 
     // Get unique categories from products
-    const categories = ['all', ...new Set(products.map(item => item.category))];
+    const categories = ['all'];
+    products.forEach(product => {
+        if (product.category && !categories.includes(product.category)) {
+            categories.push(product.category);
+        }
+    });
+
+    // Helper function to capitalize first letter
+    const capitalizeFirstLetter = (string) => {
+        if (!string) return '';
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+    };
 
     return (
         <>
@@ -70,7 +81,7 @@ const Products = () => {
                         >
                             {categories.map(category => (
                                 <option key={category} value={category}>
-                                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                                    {capitalizeFirstLetter(category)}
                                 </option>
                             ))}
                         </select>
