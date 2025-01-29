@@ -11,6 +11,10 @@
     gap: 10px;
 }
 
+label {
+    color: white;
+}
+
 .filter-select {
     padding: 8px;
     border: 1px solid #ddd;
