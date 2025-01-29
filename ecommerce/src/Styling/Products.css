@@ -1,0 +1,23 @@
+#products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .313rem;
+    margin: .625rem;
+    padding: .313rem;
+}
+
+/* Setting up where the products will live */
+.item-container {
+    margin: .25rem;
+    padding: .625rem;
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #374785;
+    color: white;
+    border-radius: .25rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+}
+/* Resizing all images */
+.item-container img {
+    height: 15rem;
+}
