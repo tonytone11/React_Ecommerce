@@ -12,8 +12,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(cors()); // Allow CORS for all origins (if needed, configure this for specific origins)
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../public")));
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "../build")));
 
 const port = process.env.PORT || 3000;
 
@@ -35,9 +34,8 @@ pool.getConnection((err, connection) => {
     console.log("Connected to the MySQL database!");
     connection.release(); // Release the connection back to the pool
 });
-
 // Display all products in the table
-app.get("/products", (req, res) => {
+app.get("/api/products", (req, res) => {
     pool.query("SELECT image, name, price, description FROM Gaming_Products", function (err, result) {
         if (err) {
             console.error(err);
@@ -48,6 +46,12 @@ app.get("/products", (req, res) => {
         console.log(result);
     });
 });
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../build", "index.html"));
+});
+
+
 
 // Start the server
 app.listen(port, () => {

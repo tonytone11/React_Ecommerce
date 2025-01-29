@@ -15,7 +15,7 @@ const Home = () => {
                     <h1 className="hero-title">
                         Welcome Home Gamers
                     </h1>
-                    <button type="button" className="hero-button" onClick={() => window.location.href = '/products'}>
+                    <button type="button" className="hero-button" onClick={() => window.location.href = '/api/products'}>
                         SHOP HERE
                     </button>
                     <h2 className="hero-subtitle">
