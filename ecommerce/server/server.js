@@ -19,10 +19,10 @@ const port = process.env.PORT || 3000;
 
 // Establish connection to database using a connection pool
 const pool = mysql.createPool({
-    host: "sql5.freemysqlhosting.net",
-    user: "sql5760049",
-    password: "FCsb3ilM61",
-    database: "sql5760049",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
 });
 
 // Test MySQL connection when the server starts
