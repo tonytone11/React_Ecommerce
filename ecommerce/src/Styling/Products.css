@@ -1,3 +1,28 @@
+.filters-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
 #products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
