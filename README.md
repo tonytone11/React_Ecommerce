@@ -2,7 +2,7 @@
 
 ## PROJECT OVERVIEW
 
-This project is created in React. This website is a platform to shop for anyone trying to get into the gaming space.
+The Gaming E-Commerce Platform is an innovative web application developed using React for the frontend and MySQL for the backend database management. This platform serves as a comprehensive shopping destination for individuals looking to enter the gaming space. Our goal is to provide a user-friendly experience, making it easier for newcomers to explore, discover, and purchase gaming products, including consoles, accessories, and games.
 
 Functionality:
 - Filter by different categories
