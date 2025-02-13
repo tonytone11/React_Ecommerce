@@ -1,5 +1,6 @@
 # React_Ecommerce
-PROJECT OVERVIEW
+
+## PROJECT OVERVIEW
 
 This project is created in React. This website is a platform to shop for anyone trying to get into the gaming space.
 
